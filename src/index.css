@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #004B87;
+  --color-brand-gray: #63666A;
+  --color-brand-light-gray: #F4F4F4;
+  
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@layer utilities {
+  .clip-azmir {
+    border-radius: 40px 0 40px 0;
+  }
+  
+  .clip-card {
+    border-radius: 12px 0 12px 0;
+  }
+
+  .clip-btn {
+    border-radius: 4px 12px 4px 12px;
+  }
+  
+  .dots-pattern {
+    background-image: radial-gradient(var(--color-brand-gray) 1px, transparent 1px);
+    background-size: 10px 10px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-brand-gray antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold text-slate-900 tracking-tight uppercase;
+}
