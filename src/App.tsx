@@ -281,9 +281,15 @@ export default function App() {
           </div>
           
           <div className="mt-16 text-center">
-            <button className="bg-brand-blue text-white px-10 py-4 clip-btn font-bold text-sm shadow-md hover:bg-blue-800 transition-colors">
+            <a 
+              href="https://drive.google.com/uc?export=download&id=1eRuC1PdahKajvKk5FfwPv4ztaZhY_4wF" 
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-brand-blue text-white px-10 py-4 clip-btn font-bold text-sm shadow-md hover:bg-blue-800 transition-colors"
+            >
               Kataloqu Yüklə
-            </button>
+            </a>
           </div>
         </div>
       </section>
