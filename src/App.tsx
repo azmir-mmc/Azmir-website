@@ -106,7 +106,7 @@ const xidmetlerData = [
 
 const layihelerData = {
   title: "Təcrübə və layihələr",
-  description: "AZMIR Türkiyə və Azərbaycan bazarlarında müxtəlif sənaye və enerji layihələrində iştirak etmişdir.",
+  description: "AZMIR İNŞAAT sənaye sahəsində müxtəlif istiqamətlər üzrə mühəndislik, tikinti və texniki işlərin icrasında iştirak etmiş, geniş praktik təcrübə formalaşdırmışdır. Şirkət layihələrin planlaşdırılması, sahədə icrası və texniki dəstəyi mərhələlərini əhatə edən kompleks yanaşma əsasında real layihələr həyata keçirmişdir. Fəaliyyət çərçivəsində sənaye tikintisi, mexaniki və boru işləri, elektrik və avtomatika sistemləri, izolyasiya və havalandırma işləri, texniki xidmət, eləcə də avadanlıq və materialların təchizatı üzrə işlər icra olunmuşdur. Layihələrin icrası zamanı texniki tələblər və sahə şəraiti nəzərə alınaraq effektiv və praktik mühəndis həlləri tətbiq edilmişdir. AZMIR Türkiyə və Azərbaycan bazarlarında müxtəlif sənaye və enerji layihələrində iştirak etmişdir. Şirkət iri sənaye obyektləri və beynəlxalq layihələr çərçivəsində həm icra, həm də təchizat üzrə işlər həyata keçirmişdir.",
   items: [
     "STAR Neft Emalı Zavodu, Petkim Neft-Kimya Kompleksi, İstanbul Yeni Hava Limanı",
     "Azerkimya, HAOR Neft Emalı Zavodu, TÜPRAŞ",
@@ -114,16 +114,6 @@ const layihelerData = {
     "Əməkdaşlıqlar: Technicas Reunidas, Tekfen, İÇTAŞ Energy, Cengiz Holding, ENKA, Saipem, Azeriqaz, Siemens."
   ]
 };
-
-const partners = [
-  "Siemens", "ABB", "Honeywell", "Schneider Electric", "MEGA Endüstri", "Esders GmbH", "Pamuk Teknoloji", "ORS AS"
-];
-
-const certifications = [
-  "ISO 9001:2015 Keyfiyyət İdarəetmə Sistemi",
-  "ISO 14001:2015 Ətraf Mühit İdarəetmə Sistemi",
-  "ISO 45001:2018 Sağlamlıq və Əməyin Təhlükəsizliyi"
-];
 
 export default function App() {
   return (
@@ -137,7 +127,7 @@ export default function App() {
           </div>
           <div className="flex items-center gap-2">
             <Mail className="w-4 h-4 text-brand-blue" />
-            <span>info@azmir.net</span>
+            <a href="mailto:info@azmir.net" className="hover:text-brand-blue transition-colors">info@azmir.net</a>
           </div>
           <div className="flex items-center gap-2">
             <Globe className="w-4 h-4 text-brand-blue" />
@@ -151,18 +141,15 @@ export default function App() {
 
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-brand-light-gray px-6 md:px-12 py-6 flex justify-between items-center">
-        <div className="text-3xl font-black tracking-tighter text-brand-blue">
+        <a href="#" className="text-3xl font-black tracking-tighter text-brand-blue hover:opacity-80 transition-opacity">
           AZMİR
-        </div>
+        </a>
         <div className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-widest">
           <a href="#haqqimizda" className="hover:text-brand-blue transition-colors">Haqqımızda</a>
           <a href="#xidmetler" className="hover:text-brand-blue transition-colors">Xidmətlər</a>
           <a href="#layiheler" className="hover:text-brand-blue transition-colors">Layihələr</a>
           <a href="#elaqe" className="hover:text-brand-blue transition-colors">Əlaqə</a>
         </div>
-        <button className="bg-brand-blue text-white px-8 py-3 clip-btn text-sm font-bold hover:bg-blue-800 transition-all shadow-md">
-          Təklif Al
-        </button>
       </nav>
 
       {/* Hero Section */}
@@ -185,11 +172,6 @@ export default function App() {
             <p className="text-lg text-brand-gray mb-10 max-w-md leading-relaxed">
               Sənaye sahəsində kompleks mühəndislik və tikinti işlərinin icrasını təmin edirik. Praktiki nəticə, etibarlı tərəfdaş.
             </p>
-            <div className="flex gap-4">
-              <button className="bg-brand-blue text-white px-10 py-4 clip-btn font-bold hover:scale-105 transition-transform flex items-center gap-2 shadow-lg">
-                Xidmətlərimiz <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
           </motion.div>
 
           <motion.div 
@@ -312,7 +294,7 @@ export default function App() {
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-brand-gray uppercase">{layihelerData.title}</h2>
             <div className="w-16 h-1 bg-brand-blue rounded-full mb-6" />
-            <p className="text-brand-gray text-sm font-medium max-w-2xl">{layihelerData.description}</p>
+            <p className="text-brand-gray text-sm font-medium w-full">{layihelerData.description}</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -331,63 +313,17 @@ export default function App() {
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="bg-brand-blue py-20 px-6 md:px-12 text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-          <div className="flex flex-wrap justify-center md:justify-start gap-12 items-center">
-            {partners.slice(0, 4).map((partner, idx) => (
-              <span key={idx} className="text-sm font-black tracking-[0.2em] opacity-80 uppercase">{partner}</span>
-            ))}
-          </div>
-          <div className="flex gap-4">
-            {certifications.map((cert, idx) => (
-              <span key={idx} className="text-[10px] border border-white/40 px-3 py-1 rounded uppercase font-bold">
-                {cert.split(' ')[0] + ' ' + cert.split(' ')[1]}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications Section */}
-      <section className="py-24 px-6 md:px-12 bg-white">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-8">Keyfiyyət və Standartlar</h2>
-            <p className="text-brand-gray mb-10 leading-relaxed">
-              AZMİR fəaliyyətini beynəlxalq standartlara uyğun şəkildə həyata keçirir və müvafiq ISO sertifikatlarına malikdir.
-            </p>
-            <div className="space-y-4">
-              {certifications.map((cert, idx) => (
-                <div key={idx} className="flex items-start gap-4 p-4 bg-brand-light-gray rounded-xl">
-                  <Award className="w-6 h-6 text-brand-blue shrink-0" />
-                  <span className="font-medium text-slate-800">{cert}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute -top-6 -left-6 w-32 h-32 dots-pattern opacity-20" />
-            <img 
-              src="https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=1200" 
-              alt="Quality Control" 
-              className="w-full h-[400px] object-cover clip-azmir shadow-xl"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer id="elaqe" className="bg-brand-blue text-white py-12 px-6 md:px-12 border-t border-white/10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-2xl font-black tracking-tighter">AZMİR</div>
-          <div className="text-sm font-medium opacity-80">Əlaqə: +994 50 266 30 52</div>
-          <div className="flex gap-8 text-xs font-bold uppercase tracking-widest opacity-60">
-            <a href="#" className="hover:text-white transition-colors">Gizlilik siyasəti</a>
-            <a href="#" className="hover:text-white transition-colors">İstifadə şərtləri</a>
-          </div>
-          <p className="text-xs opacity-50">© 2024 AZMİR. Bütün hüquqlar qorunur.</p>
+          <a href="https://wa.me/994502663052" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium opacity-80 hover:opacity-100 transition-opacity">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+            Əlaqə: +994 50 266 30 52
+          </a>
+          <p className="text-xs opacity-50">© 2026 AZMİR. Bütün hüquqlar qorunur.</p>
         </div>
       </footer>
     </div>
